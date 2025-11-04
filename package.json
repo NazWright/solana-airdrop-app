@@ -1,0 +1,23 @@
+{
+  "name": "solana-airdrop-app",
+  "version": "1.0.0",
+  "description": "Example airdrop application using Solana runtime",
+  "homepage": "https://github.com/NazWright/solana-airdrop-app#readme",
+  "bugs": {
+    "url": "https://github.com/NazWright/solana-airdrop-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NazWright/solana-airdrop-app.git"
+  },
+  "license": "ISC",
+  "author": "Nazere Wright",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4"
+  }
+}
