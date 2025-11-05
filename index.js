@@ -6,10 +6,9 @@ const {
     LAMPORTS_PER_SOL
 } = require("@solana/web3.js");
 
-// Alchemy RPC URL - Replace YOUR_API_KEY with your actual API key
-const ALCHEMY_RPC_URL = "https://solana-devnet.g.alchemy.com/v2/YOUR_API_KEY";
 
 // define solana wallet
+
 const solanaWallet = new Keypair();
 
 // grab wallet credentials
@@ -20,7 +19,7 @@ console.log({ publicKey, secretKey });
 
 const getWalletBalance = async () => {  
     try {
-        const connection = new Connection(ALCHEMY_RPC_URL, "confirmed");
+        const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
         const balance = await connection.getBalance(publicKey);
         console.log(`Wallet balance: ${balance / LAMPORTS_PER_SOL} SOL`);
     } catch (error) {
@@ -31,10 +30,10 @@ const getWalletBalance = async () => {
 
 const airdropSol = async () => {
     try {
-        const connection = new Connection(ALCHEMY_RPC_URL, "confirmed");
+        const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
         const airdropSignature = await connection.requestAirdrop(
             publicKey,
-            .01 * LAMPORTS_PER_SOL
+            2 * LAMPORTS_PER_SOL
         );
         
         const latestBlockHash = await connection.getLatestBlockhash();
